@@ -71,6 +71,7 @@
                                         onclick="return confirm('Are you sure you want to archive this event?')">
                                         Archive Event
                                     </button>
+                                </form>
                             @endif
                         </div>
                     @endif
