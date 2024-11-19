@@ -14,7 +14,7 @@
 
         <div class="bg-gray-50 px-4 py-5 sm:p-6">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                @foreach ($events as $event)
+                @forelse ($events as $event)
                     <div class="bg-white overflow-hidden shadow rounded-lg">
                         @if ($event->image_path)
                             <img src="{{ Storage::url($event->image_path) }}" alt="{{ $event->title }}"
@@ -71,7 +71,15 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="bg-white overflow-hidden shadow rounded-lg">
+                        <div class="px-4 py-5 sm:p-6">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                No events found
+                            </h3>
+                        </div>
+                    </div>
+                @endforelse
             </div>
 
             <div class="mt-4">
